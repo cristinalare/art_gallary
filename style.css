@@ -113,14 +113,10 @@ a {
 } */
 
 /* CUSTOM TYPOGRAPHY */
+/* HERO */
 /* mobile */
 .heading.main {
     font-size: 3.75rem;
-    line-height: 100%;
-}
-
-.heading.secondary {
-    font-size: 2.25rem;
     line-height: 100%;
 }
 
@@ -129,7 +125,6 @@ a {
     line-height: 156%;
     color: var(--black-color);
 }
-
 /* tablet */
 @media only screen and (min-width: 615px) {
     .heading.main {
@@ -142,15 +137,37 @@ a {
         font-size: 6rem;
         line-height: 92%;
     }
-    .heading.secondary {
+    /* .heading.secondary {
         font-size: 3.75rem;
-    }
-    .body {
+    } */
+    .hero .body {
         font-size: 1.375rem;
         line-height: 145%;
         color: var(--grey-color);
     }
 } 
+
+/* ABOUT */
+/* mobile */
+.heading.secondary {
+    font-size: 2.25rem;
+    line-height: 100%;
+}
+
+/* desktop */
+@media only screen and (min-width: 1000px) {
+    .heading.secondary {
+        font-size: 3.75rem;
+    }
+    .about .body {
+        font-size: 1.375rem;
+        line-height: 145%;
+        
+    }
+} 
+
+
+
 
 /* buttons */
 .button {
@@ -191,17 +208,22 @@ img {
     max-width: 100%;
 }
 
-/* Hero section */
-.hero {
+/* Hero section 
+=============== */
+
+.grid {
     display: grid;
+    align-items: center;
+    align-content: center;
     row-gap: 1.5rem;
+}
+
+.hero {
     grid-template-areas:
         "image"
         "title"
         "description"
         "button";
-    align-items: center;
-    align-content: center;
 }
 
 .hero .title,
@@ -252,7 +274,7 @@ img {
             "image image title title title"
             "image image description description description"
             "image image button button button"
-            "image-two image-two image-two image-two image-two"
+            "image-two image-two image-two image-two image-two";
     }
 
     .hero .image {
@@ -281,10 +303,92 @@ img {
             "black-bg-3 title image image description description"
             "black-bg black-bg image image button button"
             "black-bg black-bg image image blank blank"
-            "black-bg-2 black-bg-2 image-two image-two image-two image-two"
+            "black-bg-2 black-bg-2 image-two image-two image-two image-two";
     }
 
     .hero .title {
         grid-column: title / span 2;
     }
 }
+
+/* about section
+================ */
+
+.about {
+    gap: 1rem;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 8rem 0.7rem;
+    grid-template-areas:
+        "img1"    
+        "day"
+        "img2"
+        "img3"
+        "come";
+}
+
+.about-day,
+.about-come {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.about-come h2,
+.about-come p {
+    color: white;
+}
+
+.about-img1 {
+    grid-area: img1;
+}
+
+.about-day {
+    grid-area: day;
+}
+
+.about-img2 {
+    grid-area: img2;
+}
+
+.about-img3 {
+    grid-area: img3;
+}
+
+.about-come {
+    grid-area: come;
+    padding: 3rem 1rem;
+    background-color: black;
+}
+
+@media only screen and (min-width: 600px) {
+    .about {
+        grid-template-columns: 3fr 0.8fr 3fr;
+        grid-template-areas:
+            "day img1 img1"
+            "img2 img2 img3"
+            "img2 img2 come";
+        margin: 8rem 2rem;
+    }
+    .about-come {
+        padding: 0 2rem;
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width: 780px) {
+    .about-come {
+        padding: 0 3rem;
+    }
+    .about {
+        padding: 8rem 7vw;
+        max-width: 1050px;
+        margin: auto;
+    }
+}
+
+/* footer 
+========== */

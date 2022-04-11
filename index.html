@@ -14,12 +14,7 @@
 </head>
 <body>
   <main>
-    <div class="hero">
-      <!-- <img class="image" src="./assets/mobile/image-hero.jpg" alt="hero art gallery" width="375" height="auto"
-      sizes="(min-width: 375px) 60vw, 100vw"
-      srcset="./assets/mobile/image-hero.jpg 375w, 
-                ./assets/tablet/image-hero.jpg 437w,
-                ./assets/desktop/image-hero.jpg 540w"/> -->
+    <div class="grid hero">
       <div class="black"></div>
       <picture class="image">
         <source media="(max-width: 615px)"
@@ -45,6 +40,57 @@
         </div>
       </div>
     </div>
+
+    <article class="grid about">
+      <picture class="about-img1">
+        <source media="(max-width: 380px)"
+          srcset="./assets/mobile/image-grid-1.jpg 1x,
+          ./assets/mobile/image-grid-1@2x.jpg 2x"/> 
+        <source media="(max-width: 780px)"
+        srcset="./assets/tablet/image-grid-1.jpg 1x,
+        ./assets/tablet/image-grid-1@2x.jpg 2x"/> 
+        <source media="(min-width: 780px)"
+        srcset="./assets/desktop/image-grid-1.jpg 1x,
+        ./assets/desktop/image-grid-1@2x.jpg 2x"/> 
+        <img src="./assets/mobile/image-grid-1.jpg" alt="about art gallery image1"/>
+      </picture>
+
+      <div class="about-day">
+        <h2 class="heading secondary">Your Day at the Gallery</h2>
+        <p class="body">Wander through our distinct collections and find new insights about our artists. Dive into the details of their creative process.</p>
+      </div>
+
+      <picture class="about-img2">
+        <source media="(max-width: 380px)"
+          srcset="./assets/mobile/image-grid-2.jpg 1x,
+          ./assets/mobile/image-grid-2@2x.jpg 2x"/> 
+        <source media="(max-width: 780px)"
+        srcset="./assets/tablet/image-grid-2.jpg 1x,
+        ./assets/tablet/image-grid-2@2x.jpg 2x"/> 
+        <source media="(min-width: 780px)"
+        srcset="./assets/desktop/image-grid-2.jpg 1x,
+        ./assets/desktop/image-grid-2@2x.jpg 2x"/> 
+        <img src="./assets/mobile/image-grid-2.jpg" alt="about art gallery image2"/>
+      </picture>
+
+      <picture class="about-img3">
+        <source media="(max-width: 380px)"
+          srcset="./assets/mobile/image-grid-3.jpg 1x,
+          ./assets/mobile/image-grid-3@2x.jpg 2x"/> 
+        <source media="(max-width: 780px)"
+        srcset="./assets/tablet/image-grid-3.jpg 1x,
+        ./assets/tablet/image-grid-3@2x.jpg 2x"/> 
+        <source media="(min-width: 780px)"
+        srcset="./assets/desktop/image-grid-3.jpg 1x,
+        ./assets/desktop/image-grid-3@2x.jpg 2x"/> 
+        <img src="./assets/mobile/image-grid-3.jpg" alt="about art gallery image3"/>
+      </picture>
+
+      <div class="about-come">
+        <h2 class="heading secondary">COME & BE INSPIRED</h2>
+        <p class="body">We're excited to welcome you to our gallery and see how our collections influence you.</p>
+      </div>
+    </article>
   </main>
   <footer>
 
