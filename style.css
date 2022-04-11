@@ -1,0 +1,290 @@
+/* Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+    text-decoration: none;
+}
+
+/* Universal styles
+=================== */
+
+/* colors */
+:root {
+    --gold-color: #D5966C;
+    --grey-color: #444444;
+    --white-color: #FFFFFF;
+    --black-color: #151515; 
+}
+
+/* typography */
+.heading {
+    font-family: 'Big Shoulders Display', cursive;
+    font-style: normal;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--black-color);
+}
+
+.body {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+/* .heading.xl {
+    font-size: 6rem;
+    line-height: 92%;
+}
+
+.heading.l,
+.heading.m,
+.heading.s {
+    line-height: 100%;
+}
+
+.heading.l {
+    font-size: 4.375rem;
+}
+
+.heading.m {
+    font-size: 3.75rem;
+}
+
+.heading.s {
+    font-size: 2.25rem;
+}
+
+.body.m {
+    font-size: 1.375rem;
+    line-height: 145%;
+    color: var(--grey-color);
+}
+
+.body.s {
+    font-size: 1.125rem;
+    line-height: 156%;
+    color: var(--black-color);
+} */
+
+/* CUSTOM TYPOGRAPHY */
+/* mobile */
+.heading.main {
+    font-size: 3.75rem;
+    line-height: 100%;
+}
+
+.heading.secondary {
+    font-size: 2.25rem;
+    line-height: 100%;
+}
+
+.body {
+    font-size: 1.125rem;
+    line-height: 156%;
+    color: var(--black-color);
+}
+
+/* tablet */
+@media only screen and (min-width: 615px) {
+    .heading.main {
+        font-size: 4.375rem;
+    }
+} 
+/* desktop */
+@media only screen and (min-width: 1100px) {
+    .heading.main {
+        font-size: 6rem;
+        line-height: 92%;
+    }
+    .heading.secondary {
+        font-size: 3.75rem;
+    }
+    .body {
+        font-size: 1.375rem;
+        line-height: 145%;
+        color: var(--grey-color);
+    }
+} 
+
+/* buttons */
+.button {
+    font-family: 'Big Shoulders Display';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: 0.181em;
+    color: var(--white-color);
+    display: flex;
+}
+
+.button-text {
+    padding: 1.2em 1.5em;
+    background-color: var(--black-color);
+    transition: background-color 0.4s ease-in-out;
+}
+
+.button-arrow {
+    background-color: var(--gold-color);
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.4s ease-out;
+}
+
+@media (hover: hover) {
+    .button:hover .button-text {
+        background-color: var(--gold-color);
+    }
+    .button:hover .button-arrow {
+        background-color: var(--black-color);
+    }
+}
+
+/* images */
+img {
+    max-width: 100%;
+}
+
+/* Hero section */
+.hero {
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-areas:
+        "image"
+        "title"
+        "description"
+        "button";
+    align-items: center;
+    align-content: center;
+}
+
+.hero .title,
+.hero .description,
+.hero .button {
+    padding: 0 4vw;
+}
+
+.hero .black {
+    grid-area: black-bg;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    grid-row: black-bg-1 / black-bg-2;
+    grid-column: black-bg / span 2;
+    display: none;
+    z-index: -1;
+}
+
+.hero .image {
+    grid-area: image;
+}
+.hero .title {
+    grid-area: title;
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+}
+
+.hero .description {
+    grid-area: description;
+}
+.hero .button {
+    grid-area: button;
+}
+
+/* ~ tablet */
+@media only screen and (min-width: 615px) {
+    .hero .title,
+    .hero .description,
+    .hero .button {
+        padding: 0;
+        margin-right: 3vw;
+    }
+    
+    .hero {
+        grid-template-columns: 2fr 2fr 6ch 2fr 2fr;
+        grid-template-areas: 
+            "image-one image-one image-one image-one image-one"
+            "image image title title title"
+            "image image description description description"
+            "image image button button button"
+            "image-two image-two image-two image-two image-two"
+    }
+
+    .hero .image {
+        grid-row: image-one / image-two;
+        grid-column: image-one / span 3;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* ~ desktop */
+@media only screen and (min-width: 1100px) {
+    .hero .black {
+        display: block;
+    }
+    
+    .hero .description {
+        max-width: 40ch;
+    }
+
+    .hero {
+        grid-template-columns: 1fr 35ch 30ch 30ch 10ch 3fr;
+        grid-template-areas: 
+            "black-bg-1 black-bg-1 image-one image-one image-one image-one"
+            "black-bg-3 title image image description description"
+            "black-bg black-bg image image button button"
+            "black-bg black-bg image image blank blank"
+            "black-bg-2 black-bg-2 image-two image-two image-two image-two"
+    }
+
+    .hero .title {
+        grid-column: title / span 2;
+    }
+}
