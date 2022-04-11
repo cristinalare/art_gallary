@@ -137,9 +137,6 @@ a {
         font-size: 6rem;
         line-height: 92%;
     }
-    /* .heading.secondary {
-        font-size: 3.75rem;
-    } */
     .hero .body {
         font-size: 1.375rem;
         line-height: 145%;
@@ -448,4 +445,90 @@ footer .body {
     footer .body {
         font-size: 1.125rem;
     }
+}
+
+/*================
+    Location page
+================ */
+
+.container-btn {
+    position: relative;
+    height: 0;
+}
+.absolute {
+    position: absolute;
+    top: 0;
+    left: 12%;
+    z-index: 20;
+}
+
+#map {
+    height: 80vh;
+    width: 100vw;
+    z-index: 0;
+}
+
+.heading.small {
+    font-size: 2rem;
+    color: var(--gold-color);
+}
+
+@media only screen and (min-width: 1000px) {
+    .heading.small {
+        font-size: 2.5rem;
+    }
+    .location .body {
+        font-size: 1.4rem;
+    }
+}
+
+.location {
+    display: grid;
+    padding: 10vh 5vw;
+    grid-template-areas: 
+        "title"
+        "address";
+    gap: 3rem;
+    background-color: var(--black-color);
+}
+
+.location .main {
+    grid-area: title;
+    color: var(--white-color);
+}
+
+.address-container {
+    grid-area: address;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.address-container .body {
+    color: white;
+}
+
+@media only screen and (min-width: 700px) {
+    .location {
+        grid-template-areas: 
+            "title gap address";
+        grid-template-columns: 30% 1fr 45%;
+        gap: 0;
+        padding: 10vh 10vw;
+    }
+}
+
+.location-footer {
+    background-color: var(--gold-color);
+}
+
+.location-footer .heading,
+.location-footer .body,
+.location-footer .contact-icon {
+    color: var(--black-color);
+    fill: var(--black-color);
+}
+
+.location-icons a:hover .loc-icon {
+    fill: var(--grey-color);
 }
