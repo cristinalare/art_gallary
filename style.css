@@ -305,7 +305,17 @@ img {
 
     .hero .title {
         grid-column: title / span 2;
+        background: linear-gradient(to right, white 58%, black 0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
     }
+
+    /* .title .heading.main {
+        color: var(--white-color);
+        mix-blend-mode: difference;
+    } */
 }
 
 /* about section
