@@ -468,13 +468,13 @@ footer .body {
 .absolute {
     position: absolute;
     top: 0;
-    left: 12%;
+    left: 3rem;
     z-index: 20;
 }
 
 #map {
     height: 80vh;
-    width: 100vw;
+    width: 100%;
     z-index: 0;
 }
 
